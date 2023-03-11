@@ -13,6 +13,12 @@ export default function App() {
       { text: 'OK' },
     ]);
   }
+  function soundCloudConnect() {
+    Alert.alert('Page inka building', 'Connecting to soundcloud, wait forever!', [
+      { text: 'Cancel', style: 'cancel' },
+      { text: 'OK' },
+    ]);
+  }
   return (
     <View style={styles.container}>
         <View style={styles.header}>
@@ -22,8 +28,9 @@ export default function App() {
           <Text style={styles.textInc}>There will be an image here</Text>
         </View>
         <View style={styles.btns}>
-          <Pressable style={styles.btnParent} onPress={hostPartyBtn}><Text style={styles.btnChild}>Host a party</Text></Pressable>
-          <Pressable style={styles.btnParent} onPress={joinPartyBtn}><Text style={styles.btnChild}>Join a party</Text></Pressable>
+          <Pressable style={styles.btnParent} onPress={hostPartyBtn}><Text style={styles.btnChild}>HOST A PARTY</Text></Pressable>
+          <Pressable style={styles.btnParent} onPress={joinPartyBtn}><Text style={styles.btnChild}>JOIN A PARTY</Text></Pressable>
+          <Pressable style={[styles.btnParent, {backgroundColor: "#F8610F"}]} onPress={soundCloudConnect}><Text style={styles.btnChild}>GO TO SOUNDCLOUD</Text></Pressable>
         </View>
     </View>
   );
@@ -35,7 +42,7 @@ const styles = StyleSheet.create({
     width: "100%",
     // height: 78,
     padding: 20,
-    flex: 1
+    // flex: 1
   },
   headerText: {
     fontSize: 24,
@@ -53,9 +60,8 @@ const styles = StyleSheet.create({
     width: '80%',
     borderColor: 'black',
     borderWidth: 2,
-    marginTop: 20,
-    marginBottom: 20,
-    flex: 10
+    marginVertical: 20,
+    flex: 6
   },
   textInc: {
     fontSize: 20,
@@ -63,16 +69,18 @@ const styles = StyleSheet.create({
   },
   btns: {
     marginVertical: 30,
-    flex: 5
+    flex: 6
   },
   btnParent: {
     backgroundColor: "#9C13BC",
     paddingVertical: 20,
     paddingHorizontal: 60,
     marginVertical: 16,
-    borderRadius: 50
+    borderRadius: 50,
+    alignSelf: 'center'
   },
   btnChild: {
-    color: "#fff"
-  }
+    color: "#fff",
+    fontSize: 18
+  },
 });
