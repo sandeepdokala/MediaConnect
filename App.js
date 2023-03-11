@@ -1,7 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View, Alert } from 'react-native';
 
 export default function App() {
+  function hostPartyBtn() {
+    Alert.alert('Page inka building', 'Host a party should be open now!', [
+      { text: 'Cancel', style: 'cancel' },
+      { text: 'OK' },
+    ]);
+  }
+  function joinPartyBtn() {
+    Alert.alert('Page inka building', 'Join a party should be open now!', [
+      { text: 'Cancel', style: 'cancel' },
+      { text: 'OK' },
+    ]);
+  }
   return (
     <View style={styles.container}>
         <View style={styles.header}>
@@ -11,10 +22,9 @@ export default function App() {
           <Text style={styles.textInc}>There will be an image here</Text>
         </View>
         <View style={styles.btns}>
-          <Pressable style={styles.btnParent}><Text style={styles.btnChild}>Host a party</Text></Pressable>
-          <Pressable style={styles.btnParent}><Text style={styles.btnChild}>Join a party</Text></Pressable>
+          <Pressable style={styles.btnParent} onPress={hostPartyBtn}><Text style={styles.btnChild}>Host a party</Text></Pressable>
+          <Pressable style={styles.btnParent} onPress={joinPartyBtn}><Text style={styles.btnChild}>Join a party</Text></Pressable>
         </View>
-        {/* <StatusBar style='light'></StatusBar> */}
     </View>
   );
 }
