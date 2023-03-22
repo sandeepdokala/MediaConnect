@@ -5,7 +5,7 @@ import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 let viewColor = '#707070';
 let viewFloat = 'row-reverse';
 export default function Toggle() {
-    const [toggleOn, setToggleOn] = useState(false);
+    const [toggleOn, setToggleOn] = useState(true);
 
     function onToggle() {
         setToggleOn(!toggleOn);
@@ -16,7 +16,7 @@ export default function Toggle() {
             viewColor = '#707070'
             viewFloat = 'row-reverse';
         }
-        console.log(toggleOn);
+        // console.log(toggleOn);
     }
 
     return (

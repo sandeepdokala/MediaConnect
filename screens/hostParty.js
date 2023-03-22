@@ -105,14 +105,15 @@ const styles = StyleSheet.create({
     hostBtns: {
         backgroundColor: "#9C13BC",
         paddingVertical: 20,
-        paddingHorizontal: 40,
         marginVertical: 16,
         borderRadius: 50,
         alignSelf: 'center',
+        width: '100%'
     },
     btnText: {
         color: "#fff",
-        fontSize: 16
+        fontSize: 16,
+        textAlign: 'center',
     },
     sndCldBtn: {
         backgroundColor: '#F8610F'
