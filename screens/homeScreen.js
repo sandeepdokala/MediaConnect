@@ -15,7 +15,6 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <StatusBar style='light'></StatusBar>
         <View style={styles.imgLogoSec}>
-          {/* <Text style={styles.textInc}>There will be an image here</Text> */}
           <Image 
             source={require('../img/home.png')}
             style = {styles.imgLogo}

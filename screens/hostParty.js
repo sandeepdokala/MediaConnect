@@ -34,7 +34,6 @@ export default function HostAParty() {
                         setValue={setDropDownValue}
                         setItems={setDropDownItems}
                         containerStyle={{height: 40, width: 80}}
-                        
                     />
                 </View>
                 <View style={styles.limitMembersField}>
@@ -98,13 +97,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         width: 80
     },
-    // toggleView: {
-        // borderColor: '#707070',
-        // borderWidth: 1,
-        // borderRadius: 30,
-        // height: 40,
-        // width: 80
-    // },
     btns: {
         justifyContent: 'center',
         flexDirection: 'column',

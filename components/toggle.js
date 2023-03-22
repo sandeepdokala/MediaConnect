@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
         width: 80,
         backgroundColor: '#707070',
         padding: 4,
-        // flexDirection: 'row'
     },
     emptyPush: {
         flex: 1

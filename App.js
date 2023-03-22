@@ -1,6 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -14,7 +11,6 @@ export default function App() {
   const navigationOptions = {
     headerStyle: { backgroundColor: "#9C13BC" },
     headerTitleStyle: { color: '#FFFFFF' },
-    
   }
   
   return (
@@ -27,10 +23,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-    flex: 1,
-  },
-});
