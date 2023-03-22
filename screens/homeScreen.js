@@ -1,28 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { Pressable, StyleSheet, Text, View, Alert } from 'react-native';
+import { Pressable, StyleSheet, Text, View, Alert, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 
 export default function HomeScreen() {
   const navigation = useNavigation();
 
-  function joinPartyBtn() {
-    Alert.alert('Page inka building', 'Join a party should be open now!', [
-      { text: 'Cancel', style: 'cancel' },
-      { text: 'OK' },
-    ]);
-  }
   function soundCloudConnect() {
-    Alert.alert(' ', 'HEHEHEH',[
-      { text: 'Cancel', style: 'cancel' },
+    Alert.alert('Connect to SoundCloud', 'Connecting to soundcloud... Wait Forever!!',[
       { text: 'OK' },
     ]);
   }
 
   return (
     <View style={styles.container}>
-      {/* <StatusBar style='light'></StatusBar> */}
-        <View style={styles.imgLogo}>
-          <Text style={styles.textInc}>There will be an image here</Text>
+      <StatusBar style='light'></StatusBar>
+        <View style={styles.imgLogoSec}>
+          {/* <Text style={styles.textInc}>There will be an image here</Text> */}
+          <Image 
+            source={require('../img/home.png')}
+            style = {styles.imgLogo}
+          />
         </View>
         <View style={styles.btns}>
           <Pressable style={styles.btnParent} onPress={() => navigation.navigate('HostAParty')}><Text style={styles.btnChild}>HOST A PARTY</Text></Pressable>
@@ -40,12 +37,17 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     flex: 1,
   },
-  imgLogo: {
+  imgLogoSec: {
     width: '80%',
-    borderColor: 'black',
-    borderWidth: 2,
     marginVertical: 20,
-    flex: 10
+    marginTop: 40,
+    flex: 10,
+    justifyContent: 'center'
+  },
+  imgLogo: {
+    height: 320,
+    width: 320,
+    alignSelf: 'center',
   },
   textInc: {
     fontSize: 20,
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
   },
   btns: {
     marginVertical: 30,
-    flex: 10
+    flex: 8
   },
   btnParent: {
     backgroundColor: "#9C13BC",

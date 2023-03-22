@@ -19,7 +19,6 @@ export default function App() {
   
   return (
     <NavigationContainer>
-      <StatusBar style='light'></StatusBar>
       <Stack.Navigator>
         <Stack.Screen options={navigationOptions} name="MediaConnect" component={HomeScreen} />
         <Stack.Screen options={navigationOptions} name="HostAParty" component={HostAParty} />
