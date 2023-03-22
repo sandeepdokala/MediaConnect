@@ -4,6 +4,7 @@ import DropDownPicker from "react-native-dropdown-picker";
 import { useState } from "react";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 import Toggle from "../components/toggle";
+import KeyboardAvoidingView from "react-native/Libraries/Components/Keyboard/KeyboardAvoidingView";
 
 export default function HostAParty() {
     const [dropDownOpen, setDropDownOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function HostAParty() {
 
     
     return (
-        <View style={styles.container}>
+        <KeyboardAvoidingView style={styles.container} behavior={'height'}>
             <StatusBar style='light'></StatusBar>
             <View style={{ flex: 2, justifyContent: 'center' }}>
                 <TextInput placeholder='Private Key' style={[styles.hostPartyInp, styles.partyKeyInp]}>123456</TextInput>
@@ -27,6 +28,7 @@ export default function HostAParty() {
                 <View style={styles.limitMembersField}>
                     <Text style={styles.maxMemSetTimeOutIndc}>MAX MEMBERS: </Text>
                     <DropDownPicker
+                        placeholder={'3'}
                         open={dropDownOpen}
                         value={dropDownValue}
                         items={dropDownItems}
@@ -44,12 +46,12 @@ export default function HostAParty() {
                     <Text style={styles.maxMemSetTimeOutIndc}>ALLOW USER TO CHANGE SONG: </Text>
                     <Toggle/>
                 </View>
+                <View style={[styles.limitMembersField, styles.btns]}>
+                    <Pressable style={[styles.hostBtns, styles.sndCldBtn]}><Text style={styles.btnText}>CONNECT SOUNDCLOUD</Text></Pressable>
+                    <Pressable style={styles.hostBtns}><Text style={styles.btnText}>CREATE PARTY</Text></Pressable>
+                </View>
             </View>
-            <View style={[styles.limitMembersField, styles.btns]}>
-                <Pressable style={[styles.hostBtns, styles.sndCldBtn]}><Text style={styles.btnText}>CONNECT SOUNDCLOUD</Text></Pressable>
-                <Pressable style={styles.hostBtns}><Text style={styles.btnText}>CONNECT SOUNDCLOUD</Text></Pressable>
-            </View>
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 
@@ -100,7 +102,7 @@ const styles = StyleSheet.create({
     btns: {
         justifyContent: 'center',
         flexDirection: 'column',
-        flex: 1
+        // flex: 1
     },
     hostBtns: {
         backgroundColor: "#9C13BC",
