@@ -5,8 +5,11 @@ import { useState } from "react";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 import Toggle from "../components/toggle";
 import KeyboardAvoidingView from "react-native/Libraries/Components/Keyboard/KeyboardAvoidingView";
+import { useNavigation } from "@react-navigation/native";
+import InPartyScreen from "./inPartyScreen";
 
 export default function HostAParty() {
+    const navigation = useNavigation();
     const [dropDownOpen, setDropDownOpen] = useState(false);
     const [dropDownValue, setDropDownValue] = useState(null);
     const [dropDownItems, setDropDownItems] = useState([
@@ -16,8 +19,12 @@ export default function HostAParty() {
         {label: '4', value: '4'},
         {label: '5', value: '5'},
         {label: '6', value: '6'}
-      ]);
+    ]);
 
+    function createPartyFun() {
+        console.log('Party created....');
+        navigation.navigate(InPartyScreen)
+    }
     
     return (
         <KeyboardAvoidingView style={styles.container} behavior={'height'}>
@@ -48,7 +55,7 @@ export default function HostAParty() {
                 </View>
                 <View style={[styles.limitMembersField, styles.btns]}>
                     <Pressable style={[styles.hostBtns, styles.sndCldBtn]}><Text style={styles.btnText}>CONNECT SOUNDCLOUD</Text></Pressable>
-                    <Pressable style={styles.hostBtns}><Text style={styles.btnText}>CREATE PARTY</Text></Pressable>
+                    <Pressable style={styles.hostBtns} onPress={createPartyFun}><Text style={styles.btnText}>CREATE PARTY</Text></Pressable>
                 </View>
             </View>
         </KeyboardAvoidingView>
